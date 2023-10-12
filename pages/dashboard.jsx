@@ -34,13 +34,6 @@ const Dashboard = () => {
   const [rainfall, setRainfall] = useState(avgRainfall[0]["rainfall"]);
   const [indianState, setIndianState] = useState(avgRainfall[0]["state"]);
   const [sensorData, setSensorData] = useState({
-    // N: "N/A",
-    // P: "N/A",
-    // K: "N/A",
-    // temperature: "N/A",
-    // humidity: "N/A",
-    // ph: "N/A",
-    // moisture: "N/A",
     N: 45,
     P: 50,
     K: 21,
@@ -80,19 +73,15 @@ const Dashboard = () => {
         console.log("Sensor Data", data);
 
         if (data.feeds.length > 0) {
-          // const { N, P, K } = feeds[0].field6.split(",");
           setSensorData({
-            // N: parseInt(N),
-            // P: parseInt(P),
-            // K: parseInt(K),
-            N: 30,
-            P: 34,
-            K: 35,
+            N: parseInt(data.feeds[0].field4),
+            P: parseInt(data.feeds[0].field5),
+            K: parseInt(data.feeds[0].field6),
             temperature: parseInt(data.feeds[0].field1),
             humidity: parseInt(data.feeds[0].field2),
             ph: Math.floor(Math.random() * 10),
             rainfall: parseInt(rainfall.replace(",", "")),
-            moisture: Math.floor(Math.random() * 100),
+            moisture: parseInt(data.feeds[0].field3),
           });
         }
 

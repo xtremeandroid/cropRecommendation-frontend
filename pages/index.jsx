@@ -181,21 +181,21 @@ const Home = () => {
         </div>
       </main>
       <div className={styles.tipContainer}>
-        <Link href="/sensor" passHref>
+        {/* <Link href="/sensor" passHref>
           <div className={styles.tipBtn}>
             <AccessPoint /> Sensor
           </div>
-        </Link>
+        </Link> */}
         <Link href="/crops" passHref>
           <div className={styles.tipBtn}>
             <Growth /> Crops
           </div>
         </Link>
-        <Link href="/live" passHref>
+        {/* <Link href="/live" passHref>
           <div className={styles.tipBtn}>
             <LivePhoto /> Live
           </div>
-        </Link>
+        </Link> */}
         <Link href="/login" passHref>
           <div className={styles.tipBtn}>
             <Login /> Login
